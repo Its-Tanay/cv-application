@@ -2,17 +2,22 @@
 export default function EducationPreview({ education }) {
   return (
     <>
-      <h1>Education</h1>
+      <h3>Education</h3>
         <ul>
-            {education.map((edu, index) => (
-                <li key={index}>
+        {education.map((edu, index) => (
+            <li key={index}>
+            <div id="ed-items">
+              <div id="left-ed">
                 <p id="school">{edu.school}</p>
-                <p id="schoolCity">{edu.city}</p>
                 <p id="degree">{edu.degree}</p>
+              </div>
+              <div id="right-ed">
+                <p id="schoolCity">{edu.city}</p>
                 <p id="degreeTime">{edu.from} - {edu.to}</p>
-                <p id="degreeDesc">{edu.description}</p>
-                </li>
-            ))}
+              </div>
+            </div>
+            </li>
+        ))}
       </ul>
     </>
   );

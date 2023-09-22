@@ -1,7 +1,7 @@
 export default function AchievementsPreview({achievements}){
     return (
         <>
-          <h1>Achievements</h1>
+          <h3>Achievements</h3>
           <ul>
                 {achievements.map((ach, index) => (
                     <li key={index}>

@@ -6,16 +6,28 @@ import AchievementsPreview from "./achievementsPreview";
 import PorPreview from "./porPreview";
 import ProjectsPreview from "./projectsPreview";
 
-export default function CVPreview({ personalInfo, education, experiences, achievements, PosOfResp, projects }) {
+export default function CVPreview({ personalInfo, education, experiences, achievements, PosOfResp, projects}) {
   return (
-    <div id="cv-preview">
-      <PersonalInfoPreview personalInfo={personalInfo} />
-      <EducationPreview education={education} />
-      <ExperiencePreview experiences={experiences} />
-      <ProjectsPreview projects={projects} />
-      <PorPreview PosOfResp={PosOfResp} />
-      <AchievementsPreview achievements={achievements} />
-    </div>
+    <>
+      <div id="pi-preview">
+        <PersonalInfoPreview personalInfo={personalInfo} />
+      </div>
+      <div id="ed-preview">
+        <EducationPreview education={education} />
+      </div>
+      <div id="exp-preview">
+        <ExperiencePreview experiences={experiences} />
+      </div>
+      <div id="proj-preview">
+        <ProjectsPreview projects={projects} />
+      </div>
+      <div id="por-preview">
+        <PorPreview PosOfResp={PosOfResp} />
+      </div>
+      <div id="ach-preview">
+        <AchievementsPreview achievements={achievements} />
+      </div>
+    </>
   );
 }
 

@@ -6,6 +6,9 @@ import Achievements from "./components/Form/achievements";
 import PosOfResp from "./components/Form/por";
 import Projects from "./components/Form/projects";
 import CVPreview from "./components/Preview/preview"; 
+import Footer from "./components/footer";
+import ReactToPrint from "react-to-print";
+
 import "./styles/App.css"
 
 function App() {
@@ -17,6 +20,8 @@ function App() {
     phone: "",
     github: "",
     linkedin: "",
+    portfolio: "",
+    twitter: "",
   });
 
   const handleChangePersonalInfo = (e) => {
@@ -60,7 +65,6 @@ function App() {
       city: "",
       from: "",
       to: "",
-      description: "",
     },
   ]);
 
@@ -74,7 +78,7 @@ function App() {
 }
 
   const addEducation = () => {
-    setEducation([...education, { school: "", degree: "", city: "", from: "", to: "", description: "" }]);
+    setEducation([...education, { school: "", degree: "", city: "", from: "", to: ""}]);
 }
 
   const removeEducation = (index) => {
@@ -83,7 +87,7 @@ function App() {
     setEducation(updatedEducation);
 }
 
-  const [achievements, setAchievements] = useState([]);
+  const [achievements, setAchievements] = useState([{achievement: ""}]);
 
   const handleChangeAchievements = (e, index) => {
     const updatedAchievements = [...achievements];
@@ -128,7 +132,7 @@ function App() {
   }
 
   const removePosOfResp = (index) => {
-    const updatedPosOfResp = [...PosOfResp];
+    const updatedPosOfResp = [...posOfResp];
     updatedPosOfResp.splice(index, 1);
     setPosOfResp(updatedPosOfResp);
   }
@@ -138,8 +142,8 @@ function App() {
       title: "",
       techStack: "",
       description: "",
-      gitlink: "",
-      livelink: "",
+      githubLink: "",
+      liveLink: "",
     },
   ]);
 
@@ -153,7 +157,7 @@ function App() {
   }
 
   const addProject = () => {
-    setProjects([...projects, { title: "", description: "", gitlink: "", livelink: "", techStack: ""}]);
+    setProjects([...projects, { title: "", description: "", githubLink: "", liveLink: "", techStack: ""}]);
   }
 
   const removeProject = (index) => {
@@ -162,44 +166,216 @@ function App() {
     setProjects(updatedProjects);
   }
 
+  const [showExampleData, setShowExampleData] = useState(false);
+
+  const loadExampleData = () => {
+    setPersonalInfo({
+      firstName: "John",
+      lastName: "Doe",
+      email: "johndoe@example.com",
+      phone: "+1 (123) 456-7890",
+      github: "https://github.com/johndoe",
+      linkedin: "https://linkedin.com/in/johndoe",
+      portfolio: "https://johndoe-portfolio.com",
+      twitter: "https://twitter.com/johndoe",
+    })
+
+    setExperiences([
+      {
+        company: "TechCo",
+        position: "Senior Software Engineer",
+        city: "San Francisco, CA",
+        from: "June 2018",
+        to: "Present",
+        description: `As a Senior Software Engineer at TechCo, I lead a team of developers in the development of cutting-edge web applications. 
+          My responsibilities include architecting scalable solutions, mentoring junior engineers, and collaborating with cross-functional teams. 
+          I have successfully delivered 10+ projects, resulting in a 20% increase in user engagement and a 30% reduction in load times.`,
+      },
+      {
+        company: "InnoSoft",
+        position: "Software Developer",
+        city: "New York, NY",
+        from: "January 2015",
+        to: "May 2018",
+        description: `During my tenure at InnoSoft, I worked on a variety of projects ranging from web applications to mobile apps. 
+          I was responsible for front-end development using React and Angular, back-end development with Node.js, and database design.
+          I played a key role in optimizing database queries, resulting in a 40% improvement in application performance.`,
+      },
+    ]);
+
+    setEducation([
+      {
+        school: "University of Computer Science",
+        degree: "Bachelor of Science in Computer Science",
+        city: "Los Angeles, CA",
+        from: "August 2011",
+        to: "May 2015",
+      },
+    ]);
+
+    setAchievements([
+      {achievement: "Achieved the highest score in the company-wide coding competition."},
+      {achievement: "Received the 'Innovation Award' for developing a groundbreaking feature that streamlined the company's workflow."},
+      {achievement: "Published a research paper on machine learning algorithms in a top-tier conference."},
+    ]);
+
+    setPosOfResp([
+      {
+        position: "Technical Lead",
+        company: "Open Source Community",
+        startDate: "July 2019",
+        endDate: "Present",
+        description: `As a Technical Lead in the Open Source Community, I oversee a team of open-source contributors working on various projects. 
+          My role involves setting technical direction, conducting code reviews, and ensuring project goals are met. 
+          I have successfully led the development of several open-source tools used by thousands of developers worldwide.`,
+      },
+    ]);
+
+    setProjects([
+      {
+        title: "E-commerce Platform",
+        techStack: "React, Node.js, MongoDB",
+        description: `Led the development of a comprehensive e-commerce platform from inception to launch. 
+          The platform includes features such as product catalog, user authentication, and secure payment processing. 
+          Implemented a recommendation engine using machine learning algorithms, resulting in a 15% increase in sales.`,
+        githubLink: "https://github.com/johndoe/e-commerce-platform",
+        liveLink: "https://ecommerce.example.com",
+      },
+      {
+        title: "Social Media Analytics Dashboard",
+        techStack: "Angular, Python, Elasticsearch",
+        description: `Collaborated with a cross-functional team to build a real-time social media analytics dashboard for tracking brand mentions and sentiment analysis. 
+          Integrated Elasticsearch for efficient data retrieval and implemented data visualization using D3.js. 
+          The project received positive feedback from clients and led to an increase in contract renewals.`,
+        githubLink: "https://github.com/johndoe/social-analytics-dashboard",
+        liveLink: "https://social-analytics.example.com",
+      },
+    ]);
+
+    setShowExampleData(true);
+  };
+
+  const removeAllData = () => {
+    setPersonalInfo({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      github: "",
+      linkedin: "",
+      portfolio: "",
+      twitter: "",
+    })
+
+    setExperiences([
+      {
+        company: "",
+        position: "",
+        city: "",
+        from: "",
+        to: "",
+        description: "",
+      },
+    ]);
+
+    setEducation([
+      {
+        school: "",
+        degree: "",
+        city: "",
+        from: "",
+        to: "",
+      },
+    ]);
+
+    setAchievements([
+      "",
+    ]);
+
+    setPosOfResp([
+      {
+        position: "",
+        company: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      },
+    ]);
+
+    setProjects([
+      {
+        title: "",
+        techStack: "",
+        description: "",
+        githubLink: "",
+        liveLink: "",
+      },
+    ]);
+
+    setShowExampleData(false);
+  };
+
+  let componentRef = null;
+
   return (
     <div className="App">
+
       <div className="cv-form">
 
-        <div id="personalInfo-form">
+      <div id="form-func-buttons">
+
+        <button onClick={loadExampleData} className="ff-button">Load an example</button>
+
+        <button onClick={removeAllData} className="ff-button">Remove all data</button>
+
+        <ReactToPrint
+                trigger={() => {
+                  return <button className="ff-button">Print CV</button>;
+                }}
+                content={() => componentRef}
+                documentTitle="CV"
+        />
+
+      </div>
+
+        <div id="personalInfo-form" className="form-section">
           <h2>Personal Information</h2>
           <PersonalInfo personalInfo={personalInfo} handleChange={handleChangePersonalInfo}/>
         </div>
-        <div id="education-form">
+        <div id="education-form" className="form-section">
           <h2>Education</h2>
           <Education education={education} handleChange={handleChangeEducation} addEducation={addEducation} removeEducation={removeEducation} />
         </div>
-        <div id="experiences-form">
+        <div id="experiences-form" className="form-section">
           <h2>Experience</h2>
           <Experience experiences={experiences} handleChange={handleChangeExperience} addExperience={addExperience} removeExperience={removeExperience}/>
         </div>
-        <div id="projects-form">
+        <div id="projects-form" className="form-section">
           <h2>Projects</h2>
-          <Projects projects={projects} handleChangeProjects={handleChangeProjects} addProject={addProject} removeProject={removeProject} />
+          <Projects projects={projects} handleChange={handleChangeProjects} addProject={addProject} removeProject={removeProject} />
         </div>
-        <div id="posOfResp-form">
+        <div id="posOfResp-form" className="form-section">
           <h2>Position of Responsibility</h2>
           <PosOfResp posOfResp={posOfResp} handleChange={handleChangePosOfResp} addPosOfResp={addPosOfResp} removePosOfResp={removePosOfResp} />
         </div>
-        <div id="achievements-form">
+        <div id="achievements-form" className="form-section">
           <h2>Achievements</h2>
           <Achievements achievements={achievements} handleChange={handleChangeAchievements} addAchievement={addAchievement} removeAchievement={removeAchievement}/>
         </div>
       </div>
 
-      <CVPreview
-          personalInfo={personalInfo}
-          education={education}
-          experiences={experiences}
-          achievements={achievements}
-          PosOfResp={posOfResp}
-          projects={projects}
-      />
+      <div id="cv-preview" ref={(el) => (componentRef = el)}>
+        <CVPreview
+            personalInfo={personalInfo}
+            education={education}
+            experiences={experiences}
+            achievements={achievements}
+            PosOfResp={posOfResp}
+            projects={projects}
+        />
+
+        
+      </div>
     </div>
   );
 }
