@@ -9,7 +9,7 @@ import Projects from "./components/Form/projects";
 import CVPreview from "./components/Preview/preview"; 
 import ReactToPrint from "react-to-print";
 
-import "./styles/App.css"
+import "./styles/index.css"
 import "./styles/cvPreview.css"
 
 function App() {
@@ -323,14 +323,14 @@ function App() {
   return (
     <div className="App">
 
-      <div className="flex flex-col items-center justify-evenly">
+      <div className="flex flex-col items-center m-4 gap-4 tablet:gap-6 laptop:gap-8">
 
-          <div id="buttons">
-            <button onClick={loadExampleData} className="ff-button">Load an example</button>
-            <button onClick={removeAllData} className="ff-button">Remove all data</button>
+          <div className="flex w-full flex-col items-center gap-2 tablet:flex-row tablet:justify-evenly">
+            <button className="func-btns" onClick={loadExampleData}>Load an example</button>
+            <button className="func-btns" onClick={removeAllData}>Remove all data</button>
             <ReactToPrint
                     trigger={() => {
-                      return <button className="ff-button">Print CV</button>;
+                      return <button className="func-btns">Print CV</button>;
                     }}
                     content={() => componentRef}
                     documentTitle="CV"

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@layer components{
+    .func-btns{
+        @apply p-2 border-2 border-black bg-black text-white rounded-lg w-full hover:bg-white hover:text-black tablet:p-4 tablet:border-4 tablet:text-lg laptop:border-[5px] laptop:text-xl;
+    }
+
+    .inp{
+        @apply p-1 border-[1.25px] border-black rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent tablet:p-2 tablet:border-[1.5px] laptop:p-[0.75rem] laptop:border-[2px];
+    }
+
+    .add-btn{
+        @apply p-1 border-[1.5px] border-green-500 rounded-lg w-1/2 hover:bg-green-500 hover:text-white tablet:p-2 tablet:text-lg tablet:border-2 laptop:p-3 laptop:text-xl laptop:border-[2.5px];
+    }
+    .rmv-btn{
+        @apply p-1 border-[1.5px] border-red-500 rounded-lg w-1/2 hover:bg-red-500 hover:text-white tablet:p-2 tablet:text-lg tablet:border-2 laptop:p-3 laptop:text-xl laptop:border-[2.5px];
+    }
+}
+
