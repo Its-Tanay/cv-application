@@ -1,6 +1,6 @@
 # CV Builder App
 
-The CV Builder App is a web application that allows users to create and preview their curriculum vitae (CV) or resume. Users can input their personal information, educational background, work experiences, achievements, positions of responsibility, and projects to generate a professional-looking CV.
+The CV Builder App is a web application that allows users to create and preview their curriculum vitae (CV) or resume. Users can input their personal information, educational background, work experiences, achievements, positions of responsibility, and projects to generate a professional-looking CV. The application utilizes Tailwind CSS for styling and is responsive on all device screens.
 
 ## Table of Contents
 
@@ -12,6 +12,8 @@ The CV Builder App is a web application that allows users to create and preview 
 - [Contributing](#contributing)
 
 ## Features
+
+- **Responsive Design**: The application is responsive on all device screens.
 
 - **Personal Information**: Input your personal details such as name, contact information, and social media profiles.
 
@@ -30,6 +32,12 @@ The CV Builder App is a web application that allows users to create and preview 
 - **Load Example Data**: Quickly load example data to see how the CV will look.
 
 - **Remove All Data**: Easily clear all entered data to start fresh.
+
+## Technologies:
+
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React to Print](https://www.npmjs.com/package/react-to-print)
 
 ## Getting Started
 
