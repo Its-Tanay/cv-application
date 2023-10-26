@@ -6,7 +6,6 @@ import Achievements from "./components/Form/achievements";
 import PosOfResp from "./components/Form/por";
 import Projects from "./components/Form/projects";
 import CVPreview from "./components/Preview/preview"; 
-import Footer from "./components/footer";
 import ReactToPrint from "react-to-print";
 
 import "./styles/App.css"
@@ -254,6 +253,8 @@ function App() {
 
     setShowExampleData(true);
   };
+
+  console.log(showExampleData);
 
   const removeAllData = () => {
     setPersonalInfo({
