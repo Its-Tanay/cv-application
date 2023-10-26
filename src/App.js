@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useRef } from "react";
 import PersonalInfo from "./components/Form/personalinfo";
 import Experience from "./components/Form/experience";
 import Education from "./components/Form/education";
@@ -6,10 +7,9 @@ import Achievements from "./components/Form/achievements";
 import PosOfResp from "./components/Form/por";
 import Projects from "./components/Form/projects";
 import CVPreview from "./components/Preview/preview"; 
-import Footer from "./components/footer";
+import "./styles/index.css"
+import "./styles/cvPreview.css"
 import ReactToPrint from "react-to-print";
-
-import "./styles/App.css"
 
 function App() {
   
@@ -255,6 +255,8 @@ function App() {
     setShowExampleData(true);
   };
 
+  console.log(showExampleData);
+
   const removeAllData = () => {
     setPersonalInfo({
       firstName: "",
@@ -318,53 +320,33 @@ function App() {
   let componentRef = null;
 
   return (
-    <div className="App">
+    <div className="flex flex-col items-center p-4 tablet:p-6 gap-4 tablet:gap-8 laptop:gap-12 laptop:p-8 laptop:flex-row laptop:items-start bg-[#E6F7FF]">
 
-      <div className="cv-form">
+      <div className="flex flex-col items-center m-4 gap-4 tablet:gap-6 laptop:gap-8">
 
-      <div id="form-func-buttons">
-
-        <button onClick={loadExampleData} className="ff-button">Load an example</button>
-
-        <button onClick={removeAllData} className="ff-button">Remove all data</button>
-
-        <ReactToPrint
+          <div className="flex w-full flex-col items-center gap-2 tablet:justify-evenly">
+            <div className="flex justify-evenly items-center w-full gap-2">
+              <button className="func-btns" onClick={loadExampleData}>Example</button>
+              <button className="func-btns" onClick={removeAllData}>Clear</button>
+            </div>
+            <ReactToPrint
                 trigger={() => {
-                  return <button className="ff-button">Print CV</button>;
+                  return <button className="func-btns">Print CV</button>;
                 }}
                 content={() => componentRef}
                 documentTitle="CV"
-        />
+            />  
+          </div>
 
-      </div>
-
-        <div id="personalInfo-form" className="form-section">
-          <h2>Personal Information</h2>
           <PersonalInfo personalInfo={personalInfo} handleChange={handleChangePersonalInfo}/>
-        </div>
-        <div id="education-form" className="form-section">
-          <h2>Education</h2>
           <Education education={education} handleChange={handleChangeEducation} addEducation={addEducation} removeEducation={removeEducation} />
-        </div>
-        <div id="experiences-form" className="form-section">
-          <h2>Experience</h2>
           <Experience experiences={experiences} handleChange={handleChangeExperience} addExperience={addExperience} removeExperience={removeExperience}/>
-        </div>
-        <div id="projects-form" className="form-section">
-          <h2>Projects</h2>
           <Projects projects={projects} handleChange={handleChangeProjects} addProject={addProject} removeProject={removeProject} />
-        </div>
-        <div id="posOfResp-form" className="form-section">
-          <h2>Position of Responsibility</h2>
           <PosOfResp posOfResp={posOfResp} handleChange={handleChangePosOfResp} addPosOfResp={addPosOfResp} removePosOfResp={removePosOfResp} />
-        </div>
-        <div id="achievements-form" className="form-section">
-          <h2>Achievements</h2>
           <Achievements achievements={achievements} handleChange={handleChangeAchievements} addAchievement={addAchievement} removeAchievement={removeAchievement}/>
-        </div>
+    
       </div>
-
-      <div id="cv-preview" ref={(el) => (componentRef = el)}>
+      <div id="cv-preview" className="flex flex-col gap-2" ref={(el) => (componentRef = el)}>
         <CVPreview
             personalInfo={personalInfo}
             education={education}
@@ -373,9 +355,8 @@ function App() {
             PosOfResp={posOfResp}
             projects={projects}
         />
-
-        
       </div>
+
     </div>
   );
 }

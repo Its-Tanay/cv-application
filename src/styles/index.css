@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style:disc;
+}
+
+a {
+    color: #0077cc; /* Change the link text color */
+    text-decoration: none; /* Remove underlines from links */
+  }
+
+@layer components{
+    .func-btns{
+        @apply p-2 border-2  h-[100%] border-black bg-black text-white rounded-lg w-full hover:bg-white hover:text-black tablet:p-4 tablet:border-4 tablet:text-sm laptop:border-[5px] laptop:text-base;
+    }
+
+    .inp{
+        @apply p-1 border-[1.25px] border-black rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent tablet:p-2 tablet:border-[1.5px] laptop:p-[0.75rem] laptop:border-[2px];
+    }
+
+    .add-btn{
+        @apply p-1 border-[1.5px] border-green-500 rounded-lg w-1/2 hover:bg-green-500 hover:text-white tablet:p-2 tablet:text-lg tablet:border-2 laptop:p-3 laptop:text-xl laptop:border-[2.5px];
+    }
+    .rmv-btn{
+        @apply p-1 border-[1.5px] border-red-500 rounded-lg w-1/2 hover:bg-red-500 hover:text-white tablet:p-2 tablet:text-lg tablet:border-2 laptop:p-3 laptop:text-xl laptop:border-[2.5px];
+    }
+    .form-sec{
+        @apply flex flex-col w-full items-center gap-4 tablet:gap-6 laptop:gap-8 border-[1.25px] border-black p-4 pb-8 rounded-lg tablet:border-[1.5px] tablet:p-6 tablet:pb-12 tablet:rounded-xl laptop:border-[2px] laptop:p-8 laptop:pb-16 laptop:rounded-2xl;
+    }
+    .exp-sec{
+        @apply flex flex-col items-center gap-2 justify-center border-[1.25px] w-full border-black rounded-lg p-2 tablet:border-[1.5px] tablet:p-4 laptop:border-[2px] laptop:p-6;
+    }
+}
+  
+

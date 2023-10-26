@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+
+#cv-preview {
+    font-family: 'Playfair Display', serif;
+    flex: 1;
+    border: 0.078125vw solid #ccc; /* 1px equivalent */
+    padding: 3vw 3vw; /* 50px and 120px equivalent */
+    background-color: #FFFFFF;
+    min-width: 58.59375vw; /* 750px equivalent */
+    font-size: 1.5625vw; /* 128px equivalent (10% of 1280px) */
+    min-height:auto;
+}
+
+/* Personal Info Preview */
+#pi-preview {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+#address {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.015625vw; /* 13px equivalent */
+}
+
+#name {
+    font-size: 2.03125vw; /* 26px equivalent */
+    font-weight: bold;
+}
+
+#right-pi {
+    font-size: 0.9375vw; /* 12px equivalent */
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+/* Education Preview */
+#ed-preview > h3 {
+    margin-bottom: 0;
+}
+
+#ed-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.078125vw; /* 1px equivalent */
+    background-color: black;
+    margin-top: 0.390625vw; /* 5px equivalent */
+}
+
+#ed-preview > ul {
+    margin-top: 0;
+}
+
+#ed-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-ed {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#school {
+    font-size: 1.171875vw; /* 15px equivalent */
+    font-weight: bold;
+}
+
+#degree {
+    font-size: 0.9375vw; /* 12px equivalent */
+}
+
+#right-ed {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#schoolCity {
+    font-size: 1.09375vw; /* 14px equivalent */
+}
+
+#degreeTime {
+    font-size: 1.015625vw; /* 13px equivalent */
+}
+
+/* Experience Preview */
+#exp-preview > h3 {
+    margin-bottom: 0;
+}
+
+#exp-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.078125vw; /* 1px equivalent */
+    background-color: black;
+    margin-top: 0.390625vw; /* 5px equivalent */
+}
+
+#exp-preview > ul {
+    margin-top: 0;
+}
+
+#exp-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-exp {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#company {
+    font-size: 1.171875vw; /* 15px equivalent */
+    font-weight: bold;
+}
+
+#position {
+    font-size: 0.9375vw; /* 12px equivalent */
+}
+
+#Time {
+    text-align: right;
+    font-size: 1.015625vw; /* 13px equivalent */
+}
+
+#right-exp {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#expDesc {
+    font-size: 1.09375vw; /* 14px equivalent */
+}
+
+/* Projects Preview */
+#proj-preview > h3 {
+    margin-bottom: 0;
+}
+
+#proj-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.078125vw; /* 1px equivalent */
+    background-color: black;
+    margin-top: 0.390625vw; /* 5px equivalent */
+}
+
+#proj-preview > ul {
+    margin-top: 0;
+}
+
+#proj-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#left-proj {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#projects {
+    font-size: 1.171875vw; /* 15px equivalent */
+    font-weight: bold;
+}
+
+#liveLink {
+    font-size: 1.015625vw; /* 13px equivalent */
+    font-weight: lighter;
+    text-align: center;
+}
+
+#githubLink {
+    font-size: 1.015625vw; /* 13px equivalent */
+    font-weight: lighter;
+    text-align: center;
+}
+
+#projDesc {
+    font-size: 1.09375vw; /* 14px equivalent */
+}
+
+/* Position of responsibility Preview */
+#por-preview > h3 {
+    margin-bottom: 0;
+}
+
+#por-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.078125vw; /* 1px equivalent */
+    background-color: black;
+    margin-top: 0.390625vw; /* 5px equivalent */
+}
+
+#por-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-por {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#right-por {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#ach-preview > ul {
+    margin-top: 0;
+}
+
+#ach-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.078125vw; /* 1px equivalent */
+    background-color: black;
+    margin-top: 0.390625vw; /* 5px equivalent */
+}
+
+#ach-preview > ul > li > p {
+    margin: 0;
+    font-size: 1.09375vw; /* 14px equivalent */
+}
