@@ -346,7 +346,7 @@ function App() {
           <Achievements achievements={achievements} handleChange={handleChangeAchievements} addAchievement={addAchievement} removeAchievement={removeAchievement}/>
     
       </div>
-      <div id="cv-preview" className="flex flex-col gap-2" ref={(el) => (componentRef = el)}>
+      <div id="cv-preview" className="transition-all flex flex-col gap-2" ref={(el) => (componentRef = el)}>
         <CVPreview
             personalInfo={personalInfo}
             education={education}
