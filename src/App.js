@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PersonalInfo from "./components/Form/personalinfo";
 import Experience from "./components/Form/experience";
 import Education from "./components/Form/education";
@@ -7,10 +7,9 @@ import Achievements from "./components/Form/achievements";
 import PosOfResp from "./components/Form/por";
 import Projects from "./components/Form/projects";
 import CVPreview from "./components/Preview/preview"; 
-import ReactToPrint from "react-to-print";
-
 import "./styles/index.css"
 import "./styles/cvPreview.css"
+import ReactToPrint from "react-to-print";
 
 function App() {
   
@@ -321,20 +320,22 @@ function App() {
   let componentRef = null;
 
   return (
-    <div className="App">
+    <div className="flex flex-col items-center p-4 tablet:p-6 gap-4 tablet:gap-8 laptop:gap-12 laptop:p-8 laptop:flex-row laptop:items-start bg-[#E6F7FF]">
 
       <div className="flex flex-col items-center m-4 gap-4 tablet:gap-6 laptop:gap-8">
 
-          <div className="flex w-full flex-col items-center gap-2 tablet:flex-row tablet:justify-evenly">
-            <button className="func-btns" onClick={loadExampleData}>Load an example</button>
-            <button className="func-btns" onClick={removeAllData}>Remove all data</button>
+          <div className="flex w-full flex-col items-center gap-2 tablet:justify-evenly">
+            <div className="flex justify-evenly items-center w-full gap-2">
+              <button className="func-btns" onClick={loadExampleData}>Example</button>
+              <button className="func-btns" onClick={removeAllData}>Clear</button>
+            </div>
             <ReactToPrint
-                    trigger={() => {
-                      return <button className="func-btns">Print CV</button>;
-                    }}
-                    content={() => componentRef}
-                    documentTitle="CV"
-            />
+                trigger={() => {
+                  return <button className="func-btns">Print CV</button>;
+                }}
+                content={() => componentRef}
+                documentTitle="CV"
+            />  
           </div>
 
           <PersonalInfo personalInfo={personalInfo} handleChange={handleChangePersonalInfo}/>
@@ -345,10 +346,7 @@ function App() {
           <Achievements achievements={achievements} handleChange={handleChangeAchievements} addAchievement={addAchievement} removeAchievement={removeAchievement}/>
     
       </div>
-
-      {/*
-
-      <div id="cv-preview" ref={(el) => (componentRef = el)}>
+      <div id="cv-preview" className="flex flex-col gap-2" ref={(el) => (componentRef = el)}>
         <CVPreview
             personalInfo={personalInfo}
             education={education}
@@ -357,10 +355,8 @@ function App() {
             PosOfResp={posOfResp}
             projects={projects}
         />
-     
-        
       </div>
-       */}
+
     </div>
   );
 }
