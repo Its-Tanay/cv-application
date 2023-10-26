@@ -1,16 +1,19 @@
 export default function Achievements({achievements, handleChange, addAchievement, removeAchievement}) {
 
     return (
-        <div className="input-section">
+        <div>
+
+            <h2>Achievements</h2>
+
             {achievements.map((ach, index) => (
                 <div key={index}>
-                    <div className="inputs">
+                    <div>
                         <input type="text" name="achievement" placeholder="Achievement" value={ach.achievement} onChange={(e) => handleChange(e, index)} />
                     </div>
-                    {achievements.length > 1 && <button onClick={() => removeAchievement(index)} className="remove-button">Remove</button>}
+                    {achievements.length > 1 && <button onClick={() => removeAchievement(index)}>Remove</button>}
                 </div>
             ))}
-            <button onClick={addAchievement} className="add-button">Add Achievement</button>
+            <button onClick={addAchievement}>Add Achievement</button>
         </div>
     )
 }

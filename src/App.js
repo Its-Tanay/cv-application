@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import PersonalInfo from "./components/Form/personalinfo";
 import Experience from "./components/Form/experience";
@@ -9,6 +10,7 @@ import CVPreview from "./components/Preview/preview";
 import ReactToPrint from "react-to-print";
 
 import "./styles/App.css"
+import "./styles/cvPreview.css"
 
 function App() {
   
@@ -321,49 +323,30 @@ function App() {
   return (
     <div className="App">
 
-      <div className="cv-form">
+      <div className="flex flex-col items-center justify-evenly">
 
-      <div id="form-func-buttons">
+          <div id="buttons">
+            <button onClick={loadExampleData} className="ff-button">Load an example</button>
+            <button onClick={removeAllData} className="ff-button">Remove all data</button>
+            <ReactToPrint
+                    trigger={() => {
+                      return <button className="ff-button">Print CV</button>;
+                    }}
+                    content={() => componentRef}
+                    documentTitle="CV"
+            />
+          </div>
 
-        <button onClick={loadExampleData} className="ff-button">Load an example</button>
-
-        <button onClick={removeAllData} className="ff-button">Remove all data</button>
-
-        <ReactToPrint
-                trigger={() => {
-                  return <button className="ff-button">Print CV</button>;
-                }}
-                content={() => componentRef}
-                documentTitle="CV"
-        />
-
-      </div>
-
-        <div id="personalInfo-form" className="form-section">
-          <h2>Personal Information</h2>
           <PersonalInfo personalInfo={personalInfo} handleChange={handleChangePersonalInfo}/>
-        </div>
-        <div id="education-form" className="form-section">
-          <h2>Education</h2>
           <Education education={education} handleChange={handleChangeEducation} addEducation={addEducation} removeEducation={removeEducation} />
-        </div>
-        <div id="experiences-form" className="form-section">
-          <h2>Experience</h2>
           <Experience experiences={experiences} handleChange={handleChangeExperience} addExperience={addExperience} removeExperience={removeExperience}/>
-        </div>
-        <div id="projects-form" className="form-section">
-          <h2>Projects</h2>
           <Projects projects={projects} handleChange={handleChangeProjects} addProject={addProject} removeProject={removeProject} />
-        </div>
-        <div id="posOfResp-form" className="form-section">
-          <h2>Position of Responsibility</h2>
           <PosOfResp posOfResp={posOfResp} handleChange={handleChangePosOfResp} addPosOfResp={addPosOfResp} removePosOfResp={removePosOfResp} />
-        </div>
-        <div id="achievements-form" className="form-section">
-          <h2>Achievements</h2>
           <Achievements achievements={achievements} handleChange={handleChangeAchievements} addAchievement={addAchievement} removeAchievement={removeAchievement}/>
-        </div>
+    
       </div>
+
+      {/*
 
       <div id="cv-preview" ref={(el) => (componentRef = el)}>
         <CVPreview
@@ -374,9 +357,10 @@ function App() {
             PosOfResp={posOfResp}
             projects={projects}
         />
-
+     
         
       </div>
+       */}
     </div>
   );
 }

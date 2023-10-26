@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap');
+
+#cv-preview{
+    font-family: 'Playfair Display', serif;
+    flex: 1;
+    border: 1px solid #ccc; 
+    height: fit-content;
+    padding: 20px 50px;
+    background-color: #FFFFFF;
+    width: 750px;
+}
+
+/* Personal Info Preview */
+
+#pi-preview{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+#address{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+#address > p {
+    margin: 0;
+    padding: 0;
+}
+
+#name{
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+#right-pi{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#right-pi > p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Education Preview */
+
+#ed-preview > h3 {
+    margin-bottom: 0;
+}
+
+#ed-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+#ed-preview > ul {
+    margin-top: 0;
+}
+
+#ed-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-ed{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#left-ed > p {
+    margin: 0;
+    padding: 0;
+}
+
+#school{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#degree{
+    font-size: 12px;
+}
+
+#right-ed{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#right-ed > p {
+    margin: 0;
+    padding: 0;
+}
+
+#schoolCity{
+    font-size: 14px;
+}
+
+#degreeTime{
+    font-size: 13px;
+}
+
+/* Experience Preview */
+
+#exp-preview > h3 {
+    margin-bottom: 0;
+}
+
+#exp-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+#exp-preview > ul {
+    margin-top: 0;
+}
+
+#exp-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-exp{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#left-exp > p {
+    margin: 0;
+    padding: 0;
+}
+
+#company{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#position{
+    font-size: 12px;
+}
+
+#Time{
+    text-align: right;
+    font-size: 13px;
+}
+
+#right-exp > p {
+    margin: 0;
+    padding: 0;
+}
+
+#expDesc{
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Projects Preview */
+
+#proj-preview > h3 {
+    margin-bottom: 0;
+}
+
+#proj-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+#proj-preview > ul {
+    margin-top: 0;
+}
+
+#proj-items{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+#left-proj{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#left-proj > p {
+    margin: 0;
+    padding: 0;
+}
+
+#right-proj{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#right-proj > p {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 3px;
+}
+
+#projects{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#liveLink{
+    font-size: 13px;
+    font-weight: lighter;
+}   
+
+#githubLink{
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+#projDesc{
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Position of responsibility Preview */
+
+#por-preview > h3 {
+    margin-bottom: 0;
+}
+
+#por-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+#por-items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#left-por{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#left-por > p {
+    margin: 0;
+    padding: 0;
+}
+
+#right-por{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+#right-por > p {
+    margin: 0;
+    padding: 0;
+}
+
+#por-preview > ul {
+    margin-top: 0;
+}
+
+/* Achievements Preview */
+
+#ach-preview > h3 {
+    margin-bottom: 0;
+}
+
+#ach-preview > h3::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+#ach-preview > ul {
+    margin-top: 0;
+}
+
+#ach-preview > ul > li > p {
+    margin: 0;
+    font-size: 14px;
+}
